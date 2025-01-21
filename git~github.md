@@ -1,5 +1,7 @@
-# Learning-git
-My foundational experimentation with the mysteries realm of version control that is git/GitHub
+# Learning-git 
+
+A basic markdown of what you need to get started with git and github.
+
 # Git Commands Summary (you're welcome by the way)
 ## `git config`
 The `git config` command is used to set configuration options for Git. These options can control everything from your user information to how Git interacts with remote repositories. There are three levels of configuration:
