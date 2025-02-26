@@ -1976,3 +1976,147 @@ git show --format=short commit_hash
 - **Show Pretty Formatted Output**: `git show --pretty=format:"format" commit_hash`
 
 Understanding `git show` helps in inspecting changes introduced by commits and analyzing the details of specific commits in a Git repository. This command is essential for reviewing the history and understanding the context of changes in your project.
+
+To set up Git for your GitHub repositories on your Linux machine, follow these steps:
+
+---
+
+### **Install Git**
+First, check if Git is already installed:
+```bash
+git --version
+```
+If not installed, install it using your package manager:
+
+- **Debian/Ubuntu**:
+  ```bash
+  sudo apt update && sudo apt install git -y
+  ```
+- **Fedora**:
+  ```bash
+  sudo dnf install git -y
+  ```
+- **Arch Linux**:
+  ```bash
+  sudo pacman -S git
+  ```
+
+---
+
+### **Configure Git**
+Set your global username and email (must match your GitHub email):
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+```
+Verify your configuration:
+```bash
+git config --global --list
+```
+
+---
+
+### **Generate SSH Key (Recommended)**
+To securely connect GitHub via SSH:
+
+**Check for an existing SSH key**:
+   ```bash
+   ls ~/.ssh/id_rsa.pub
+   ```
+   If the file exists, you can use it. If not, generate a new key.
+
+**Generate a new SSH key**:
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+   ```
+   Press `Enter` to accept the default save location (`~/.ssh/id_rsa`), and set a passphrase (optional).
+
+**Start SSH agent**:
+   ```bash
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/id_rsa
+   ```
+
+**Copy SSH key to GitHub**:
+   ```bash
+   cat ~/.ssh/id_rsa.pub
+   ```
+   Copy the output and add it to GitHub:
+   - Go to [GitHub SSH Keys](https://github.com/settings/keys)
+   - Click **New SSH Key**, paste the key, and save.
+
+**Test the SSH connection**:
+   ```bash
+   ssh -T git@github.com
+   ```
+   If successful, it should say:
+   ```
+   Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+---
+
+### **4. Clone a Repository**
+To clone a repository:
+```bash
+git clone git@github.com:your-username/repository-name.git
+```
+
+Navigate into the directory:
+```bash
+cd repository-name
+```
+
+---
+
+### **Work with Git**
+- **Check repository status**:
+  ```bash
+  git status
+  ```
+- **Add changes**:
+  ```bash
+  git add .
+  ```
+- **Commit changes**:
+  ```bash
+  git commit -m "Your commit message"
+  ```
+- **Push changes to GitHub**:
+  ```bash
+  git push origin main
+  ```
+
+If the branch is not set, use:
+```bash
+git push --set-upstream origin main
+```
+
+---
+
+### **Pull Latest Changes**
+To update your local repository:
+```bash
+git pull origin main
+```
+
+---
+
+### **Creating a New Repository on GitHub & Push**
+Create a new repository on GitHub.
+Initialize Git in your local project folder:
+   ```bash
+   git init
+   ```
+Add a remote origin:
+   ```bash
+   git remote add origin git@github.com:your-username/repository-name.git
+   ```
+Add and push files:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push -u origin main
+   ```
+
+---
