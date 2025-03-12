@@ -1,7 +1,8 @@
 # **THIS IS GIT !!!** ***(Pun intended)***
 
-Well, afetr some time, I figured I'd come around and have a handy "manual" for all this version control thing that most of us IT professionals talk about.
-So here's a basic markdown of what you need to get started with git and github. (PS> Got to hand it to the vrious AI tools out there that aided in my research. Though the whole manual compilation process and evaluation based on my own personal experience was quite the workload). Anyway, enjoy :).
+Well, after a considerable amount of deliberation, I figured I'd come around and have a handy "manual" for all this version control thing that most of us IT professionals play around with.
+So here's a basic markdown of what you need to get started with git and github. 
+> (PS> Got to hand it to the various AI tools out there that aided in my research. Though the whole manual compilation process and evaluation based on my own personal experience was quite the workload). Anyways, enjoy :).
 
 # Git Commands Summary (you're welcome by the way)
 ## `git config`
